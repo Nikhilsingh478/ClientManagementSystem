@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Folder -->
+  <rect x="8" y="16" width="48" height="36" rx="4" ry="4" fill="#2E2E2E" stroke="#fff" stroke-width="2"/>
+  <path d="M8 16 L24 16 L28 24 L56 24 L56 52 L8 52 Z" fill="#3D3D3D"/>
+  <!-- User icon inside folder -->
+  <circle cx="32" cy="36" r="6" fill="#fff"/>
+  <path d="M24 50c0-4 16-4 16 0v2H24v-2z" fill="#fff"/>
+</svg>
