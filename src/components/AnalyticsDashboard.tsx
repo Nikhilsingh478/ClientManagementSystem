@@ -53,7 +53,7 @@ export function AnalyticsDashboard({ folders, onBack }: AnalyticsDashboardProps)
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,29 +62,29 @@ export function AnalyticsDashboard({ folders, onBack }: AnalyticsDashboardProps)
           <Button
             onClick={onBack}
             variant="outline"
-            className="mb-6 hover:bg-accent transition-all"
+            className="mb-4 sm:mb-6 hover:bg-accent transition-all h-10 sm:h-9 text-sm sm:text-base"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to CMS
           </Button>
 
-          <h1 className="text-foreground mb-8">Analytics Dashboard</h1>
+          <h1 className="text-foreground mb-6 sm:mb-8 text-xl sm:text-2xl">Analytics Dashboard</h1>
 
           {/* Metrics Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-6 sm:mb-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
               <Card className="bg-card border-border hover:border-accent transition-all">
-                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-muted-foreground">Total Folders</CardTitle>
-                  <Folder className="w-5 h-5 text-chart-4" />
+                <CardHeader className="flex flex-row items-center justify-between pb-2 p-4 sm:p-6">
+                  <CardTitle className="text-muted-foreground text-xs sm:text-sm">Total Folders</CardTitle>
+                  <Folder className="w-4 h-4 sm:w-5 sm:h-5 text-chart-4" />
                 </CardHeader>
-                <CardContent>
-                  <div className="text-foreground">{folders.length}</div>
-                  <p className="text-muted-foreground mt-1">Active folders</p>
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <div className="text-foreground text-xl sm:text-2xl">{folders.length}</div>
+                  <p className="text-muted-foreground mt-1 text-xs sm:text-sm">Active folders</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -95,13 +95,13 @@ export function AnalyticsDashboard({ folders, onBack }: AnalyticsDashboardProps)
               transition={{ delay: 0.2 }}
             >
               <Card className="bg-card border-border hover:border-accent transition-all">
-                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-muted-foreground">Total Clients</CardTitle>
-                  <Users className="w-5 h-5 text-muted-foreground" />
+                <CardHeader className="flex flex-row items-center justify-between pb-2 p-4 sm:p-6">
+                  <CardTitle className="text-muted-foreground text-xs sm:text-sm">Total Clients</CardTitle>
+                  <Users className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
                 </CardHeader>
-                <CardContent>
-                  <div className="text-foreground">{totalClients}</div>
-                  <p className="text-muted-foreground mt-1">All clients combined</p>
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <div className="text-foreground text-xl sm:text-2xl">{totalClients}</div>
+                  <p className="text-muted-foreground mt-1 text-xs sm:text-sm">All clients combined</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -112,13 +112,13 @@ export function AnalyticsDashboard({ folders, onBack }: AnalyticsDashboardProps)
               transition={{ delay: 0.3 }}
             >
               <Card className="bg-card border-border hover:border-accent transition-all">
-                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-muted-foreground">Active Clients</CardTitle>
-                  <Activity className="w-5 h-5 text-chart-2" />
+                <CardHeader className="flex flex-row items-center justify-between pb-2 p-4 sm:p-6">
+                  <CardTitle className="text-muted-foreground text-xs sm:text-sm">Active Clients</CardTitle>
+                  <Activity className="w-4 h-4 sm:w-5 sm:h-5 text-chart-2" />
                 </CardHeader>
-                <CardContent>
-                  <div className="text-foreground">{allActiveClients.length}</div>
-                  <p className="text-muted-foreground mt-1">Currently active</p>
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <div className="text-foreground text-xl sm:text-2xl">{allActiveClients.length}</div>
+                  <p className="text-muted-foreground mt-1 text-xs sm:text-sm">Currently active</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -129,31 +129,31 @@ export function AnalyticsDashboard({ folders, onBack }: AnalyticsDashboardProps)
               transition={{ delay: 0.4 }}
             >
               <Card className="bg-card border-border hover:border-accent transition-all">
-                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-muted-foreground">Potential Clients</CardTitle>
-                  <UserPlus className="w-5 h-5 text-chart-3" />
+                <CardHeader className="flex flex-row items-center justify-between pb-2 p-4 sm:p-6">
+                  <CardTitle className="text-muted-foreground text-xs sm:text-sm">Potential Clients</CardTitle>
+                  <UserPlus className="w-4 h-4 sm:w-5 sm:h-5 text-chart-3" />
                 </CardHeader>
-                <CardContent>
-                  <div className="text-foreground">{allPotentialClients.length}</div>
-                  <p className="text-muted-foreground mt-1">Prospects in pipeline</p>
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <div className="text-foreground text-xl sm:text-2xl">{allPotentialClients.length}</div>
+                  <p className="text-muted-foreground mt-1 text-xs sm:text-sm">Prospects in pipeline</p>
                 </CardContent>
               </Card>
             </motion.div>
           </div>
 
           {/* Charts Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
               <Card className="bg-card border-border">
-                <CardHeader>
-                  <CardTitle className="text-foreground">Client Distribution</CardTitle>
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="text-foreground text-base sm:text-lg">Client Distribution</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <ResponsiveContainer width="100%" height={300}>
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <ResponsiveContainer width="100%" height={250}>
                     <BarChart data={distributionData}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#262626" />
                       <XAxis dataKey="name" stroke="#a1a1a1" />
@@ -179,16 +179,16 @@ export function AnalyticsDashboard({ folders, onBack }: AnalyticsDashboardProps)
               transition={{ delay: 0.6 }}
             >
               <Card className="bg-card border-border">
-                <CardHeader>
-                  <CardTitle className="text-foreground">Folder Breakdown</CardTitle>
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="text-foreground text-base sm:text-lg">Folder Breakdown</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="p-4 sm:p-6 pt-0">
                   {folderData.length === 0 ? (
-                    <div className="h-[300px] flex items-center justify-center text-muted-foreground">
+                    <div className="h-[250px] flex items-center justify-center text-muted-foreground text-sm sm:text-base">
                       No folders created yet
                     </div>
                   ) : (
-                    <ResponsiveContainer width="100%" height={300}>
+                    <ResponsiveContainer width="100%" height={250}>
                       <BarChart data={folderData}>
                         <CartesianGrid strokeDasharray="3 3" stroke="#262626" />
                         <XAxis dataKey="name" stroke="#a1a1a1" />
@@ -212,30 +212,30 @@ export function AnalyticsDashboard({ folders, onBack }: AnalyticsDashboardProps)
           </div>
 
           {/* Recent Activity and Conversion Rate */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
             >
               <Card className="bg-card border-border">
-                <CardHeader>
-                  <CardTitle className="text-foreground">Recent Activity</CardTitle>
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="text-foreground text-base sm:text-lg">Recent Activity</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <div className="space-y-3 sm:space-y-4">
                     {allClients.length === 0 ? (
-                      <p className="text-muted-foreground text-center py-8">No recent activity</p>
+                      <p className="text-muted-foreground text-center py-6 sm:py-8 text-sm sm:text-base">No recent activity</p>
                     ) : (
                       allClients.map((client) => (
                         <div
                           key={client.id}
-                          className="flex items-start gap-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors"
+                          className="flex items-start gap-2.5 sm:gap-3 p-2.5 sm:p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors"
                         >
-                          <div className="w-2 h-2 rounded-full bg-chart-1 mt-2 flex-shrink-0" />
+                          <div className="w-2 h-2 rounded-full bg-chart-1 mt-1.5 sm:mt-2 flex-shrink-0" />
                           <div className="flex-1 min-w-0">
-                            <p className="text-foreground truncate">{client.businessName}</p>
-                            <p className="text-muted-foreground truncate">{client.contactDetails}</p>
+                            <p className="text-foreground truncate text-sm sm:text-base">{client.businessName}</p>
+                            <p className="text-muted-foreground truncate text-xs sm:text-sm">{client.contactDetails}</p>
                           </div>
                         </div>
                       ))

@@ -216,16 +216,16 @@ export default function App() {
 
       <SearchBar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
 
-      <main className="max-w-7xl mx-auto px-6 pb-12">
+      <main className="max-w-7xl mx-auto px-3 sm:px-6 pb-20 sm:pb-12">
         {/* Create Folder Button */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-6"
+          className="mb-4 sm:mb-6"
         >
           <Button
             onClick={() => setIsCreateFolderOpen(true)}
-            className="bg-gradient-to-r from-chart-1 to-chart-4 text-white hover:opacity-90 transition-all group shadow-lg shadow-chart-1/20"
+            className="w-full sm:w-auto bg-gradient-to-r from-chart-1 to-chart-4 text-white hover:opacity-90 transition-all group shadow-lg shadow-chart-1/20 h-12 sm:h-10"
           >
             <FolderPlus className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
             Create Folder
@@ -237,20 +237,20 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center py-20"
+            className="text-center py-12 sm:py-20 px-4"
           >
-            <div className="max-w-md mx-auto space-y-4">
-              <div className="w-20 h-20 bg-muted/30 rounded-full flex items-center justify-center mx-auto">
-                <FolderPlus className="w-10 h-10 text-muted-foreground" />
+            <div className="max-w-md mx-auto space-y-4 sm:space-y-6">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-muted/30 rounded-full flex items-center justify-center mx-auto">
+                <FolderPlus className="w-8 h-8 sm:w-10 sm:h-10 text-muted-foreground" />
               </div>
-              <h2 className="text-foreground">No Folders Yet</h2>
-              <p className="text-muted-foreground">
+              <h2 className="text-foreground px-4">No Folders Yet</h2>
+              <p className="text-muted-foreground px-4">
                 Create your first folder to organize your clients by region, category, or any way
                 you prefer.
               </p>
               <Button
                 onClick={() => setIsCreateFolderOpen(true)}
-                className="bg-foreground text-background hover:bg-foreground/90 transition-all mt-4"
+                className="w-full sm:w-auto bg-foreground text-background hover:bg-foreground/90 transition-all mt-4 h-12 sm:h-10"
               >
                 <FolderPlus className="w-5 h-5 mr-2" />
                 Create Your First Folder
@@ -264,9 +264,9 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="mb-4 px-4 py-3 bg-chart-1/10 border border-chart-1/30 rounded-lg"
+            className="mb-3 sm:mb-4 px-3 sm:px-4 py-2.5 sm:py-3 bg-chart-1/10 border border-chart-1/30 rounded-lg"
           >
-            <p className="text-chart-1">
+            <p className="text-chart-1 text-sm sm:text-base">
               Searching for: <span className="font-medium">"{searchQuery}"</span>
             </p>
           </motion.div>
@@ -274,7 +274,7 @@ export default function App() {
 
         {/* Folders List */}
         {folders.length > 0 && (
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <AnimatePresence mode="popLayout">
               {folders.map((folder, index) => (
                 <motion.div

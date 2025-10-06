@@ -25,16 +25,16 @@ export function CreateFolderModal({ isOpen, onClose, onCreateFolder }: CreateFol
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md bg-card border-border">
+      <DialogContent className="sm:max-w-md bg-card border-border w-[calc(100%-2rem)] sm:w-full">
         <DialogHeader>
-          <DialogTitle className="text-foreground flex items-center gap-2">
-            <FolderPlus className="w-5 h-5 text-chart-1" />
+          <DialogTitle className="text-foreground flex items-center gap-2 text-base sm:text-lg">
+            <FolderPlus className="w-4 h-4 sm:w-5 sm:h-5 text-chart-1" />
             Create New Folder
           </DialogTitle>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-4 py-4">
+        <form onSubmit={handleSubmit} className="space-y-4 py-3 sm:py-4">
           <div className="space-y-2">
-            <Label htmlFor="folderName" className="text-foreground">
+            <Label htmlFor="folderName" className="text-foreground text-sm sm:text-base">
               Folder Name
             </Label>
             <Input
@@ -42,22 +42,22 @@ export function CreateFolderModal({ isOpen, onClose, onCreateFolder }: CreateFol
               value={folderName}
               onChange={(e) => setFolderName(e.target.value)}
               placeholder="e.g., New York Clients, Tech Startups..."
-              className="bg-input-background border-border text-foreground"
+              className="bg-input-background border-border text-foreground h-11 sm:h-10 text-sm sm:text-base"
               autoFocus
             />
           </div>
-          <DialogFooter className="gap-2">
+          <DialogFooter className="gap-2 flex-col sm:flex-row">
             <Button
               type="button"
               variant="outline"
               onClick={onClose}
-              className="transition-all hover:bg-accent"
+              className="w-full sm:w-auto transition-all hover:bg-accent h-10 sm:h-9 text-sm sm:text-base order-2 sm:order-1"
             >
               Cancel
             </Button>
             <Button
               type="submit"
-              className="bg-foreground text-background hover:bg-foreground/90 transition-all"
+              className="w-full sm:w-auto bg-foreground text-background hover:bg-foreground/90 transition-all h-10 sm:h-9 text-sm sm:text-base order-1 sm:order-2"
               disabled={!folderName.trim()}
             >
               Create Folder

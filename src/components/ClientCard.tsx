@@ -80,56 +80,57 @@ export function ClientCard({
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
       whileHover={{ y: -4 }}
-      className={`bg-card border rounded-lg p-5 transition-all duration-300 hover:shadow-lg hover:shadow-black/20 ${
+      className={`bg-card border rounded-lg p-3 sm:p-5 transition-all duration-300 hover:shadow-lg hover:shadow-black/20 ${
         isSelected ? "border-chart-1 ring-2 ring-chart-1/20" : "border-border hover:border-accent"
       }`}
     >
-      <div className="space-y-3">
+      <div className="space-y-2.5 sm:space-y-3">
         {/* Checkbox for bulk selection */}
         {onToggleSelection && (
-          <div className="flex items-start gap-3">
+          <div className="flex items-start gap-2.5 sm:gap-3">
             <Checkbox
               checked={isSelected}
               onCheckedChange={onToggleSelection}
-              className="mt-1"
+              className="mt-1 flex-shrink-0"
             />
             <div className="flex-1 min-w-0">
-              <h3 className="text-foreground mb-1 break-words">{highlightText(client.businessName)}</h3>
-              <p className="text-muted-foreground break-words">{highlightText(client.contactDetails)}</p>
+              <h3 className="text-foreground mb-1 break-words text-sm sm:text-base">{highlightText(client.businessName)}</h3>
+              <p className="text-muted-foreground break-words text-xs sm:text-sm">{highlightText(client.contactDetails)}</p>
             </div>
           </div>
         )}
 
         {!onToggleSelection && (
           <div>
-            <h3 className="text-foreground mb-1 break-words">{highlightText(client.businessName)}</h3>
-            <p className="text-muted-foreground break-words">{highlightText(client.contactDetails)}</p>
+            <h3 className="text-foreground mb-1 break-words text-sm sm:text-base">{highlightText(client.businessName)}</h3>
+            <p className="text-muted-foreground break-words text-xs sm:text-sm">{highlightText(client.contactDetails)}</p>
           </div>
         )}
         
         <div className="pt-2 border-t border-border">
-          <p className="text-muted-foreground break-words">
+          <p className="text-muted-foreground break-words text-xs sm:text-sm">
             <span className="text-foreground">Problem: </span>
             {highlightText(client.problemDescription)}
           </p>
         </div>
 
-        <div className="flex gap-2 pt-2 flex-wrap">
+        <div className="flex gap-1.5 sm:gap-2 pt-2 flex-wrap">
           <Button
             onClick={handleCopy}
             variant="outline"
             size="sm"
-            className="flex-1 min-w-[100px] transition-all hover:bg-accent group"
+            className="flex-1 min-w-[80px] sm:min-w-[100px] transition-all hover:bg-accent active:bg-accent/60 group h-8 sm:h-9 text-xs sm:text-sm"
           >
             {copied ? (
               <>
-                <Check className="w-4 h-4 mr-2 text-chart-2" />
-                Copied!
+                <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-chart-2" />
+                <span className="hidden xs:inline">Copied!</span>
+                <span className="xs:hidden">✓</span>
               </>
             ) : (
               <>
-                <Copy className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                Copy
+                <Copy className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1 sm:mr-2 group-hover:scale-110 transition-transform" />
+                <span className="hidden xs:inline">Copy</span>
               </>
             )}
           </Button>
@@ -139,10 +140,10 @@ export function ClientCard({
               onClick={handlePromote}
               variant="outline"
               size="sm"
-              className="flex-1 min-w-[100px] transition-all hover:bg-accent hover:text-chart-2 group"
+              className="flex-1 min-w-[80px] sm:min-w-[100px] transition-all hover:bg-accent hover:text-chart-2 active:bg-accent/60 group h-8 sm:h-9 text-xs sm:text-sm"
             >
-              <TrendingUp className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-              Promote
+              <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1 sm:mr-2 group-hover:scale-110 transition-transform" />
+              <span className="hidden xs:inline">Promote</span>
             </Button>
           )}
 
@@ -150,9 +151,9 @@ export function ClientCard({
             onClick={handleDelete}
             variant="outline"
             size="sm"
-            className="transition-all hover:bg-destructive/10 hover:text-destructive hover:border-destructive group"
+            className="transition-all hover:bg-destructive/10 hover:text-destructive hover:border-destructive active:bg-destructive/20 group h-8 sm:h-9 w-8 sm:w-9 p-0"
           >
-            <Trash2 className="w-4 h-4 group-hover:scale-110 transition-transform" />
+            <Trash2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:scale-110 transition-transform" />
           </Button>
         </div>
       </div>

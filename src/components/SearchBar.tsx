@@ -13,25 +13,25 @@ export function SearchBar({ searchQuery, onSearchChange }: SearchBarProps) {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="max-w-7xl mx-auto px-6 py-6"
+      className="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-6"
     >
       <div className="relative group">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground pointer-events-none group-focus-within:text-chart-1 transition-colors" />
+        <Search className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground pointer-events-none group-focus-within:text-chart-1 transition-colors" />
         <Input
           type="text"
-          placeholder="Search across all folders... (business name, contact, or problem)"
+          placeholder="Search all folders..."
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="pl-12 h-14 bg-card border-border focus:ring-2 focus:ring-chart-1/20 focus:border-chart-1 transition-all shadow-sm"
+          className="pl-10 sm:pl-12 pr-10 h-12 sm:h-14 bg-card border-border focus:ring-2 focus:ring-chart-1/20 focus:border-chart-1 transition-all shadow-sm text-sm sm:text-base"
         />
         {searchQuery && (
           <motion.button
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             onClick={() => onSearchChange("")}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-muted hover:bg-accent flex items-center justify-center transition-colors"
+            className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-muted hover:bg-accent active:bg-accent/60 flex items-center justify-center transition-colors"
           >
-            <span className="text-muted-foreground">×</span>
+            <span className="text-muted-foreground text-xl sm:text-2xl">×</span>
           </motion.button>
         )}
       </div>
